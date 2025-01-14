@@ -9,7 +9,7 @@ dotenv.config({ path: ".env" });
 
 async function setupNodeEvents(
   on: Cypress.PluginEvents,
-  config: Cypress.PluginConfigOptions
+  config: Cypress.PluginConfigOptions,
 ): Promise<Cypress.PluginConfigOptions> {
   // This is required for the preprocessor to be able to generate JSON reports after each run
   await addCucumberPreprocessorPlugin(on, config);
@@ -18,7 +18,7 @@ async function setupNodeEvents(
     "file:preprocessor",
     createBundler({
       plugins: [createEsbuildPlugin(config)],
-    })
+    }),
   );
 
   return config;

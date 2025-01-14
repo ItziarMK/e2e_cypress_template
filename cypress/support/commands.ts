@@ -3,13 +3,14 @@ export {};
 declare global {
   namespace Cypress {
     interface Chainable {
-      login: () => void;
+      login(email: string, password: string): Chainable<void>;
+      clearLocalStorage(): Chainable<void>;
     }
   }
 }
 
-Cypress.Commands.add("login", () => {
-  cy.log("Login command executed");
+Cypress.Commands.add("login", (email: string, password: string) => {
+  // Implementation
 });
 
 // cypress/support/e2e.js

@@ -5,18 +5,31 @@
   "main": "index.js",
   "scripts": {
     "cy:o": "cypress open",
-    "cy:r": "cypress run"
+    "cy:r": "cypress run",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.{ts,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,json,md}\"",
+    "validate": "npm run lint && npm run format:check"
   },
   "devDependencies": {
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@badeball/cypress-cucumber-preprocessor": "^18.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@cypress/browserify-preprocessor": "^3.0.2",
+    "@cypress/webpack-preprocessor": "^5.17.1",
     "@types/node": "^22.10.3",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
     "cypress": "^13.0.0",
     "cypress-plugin-tab": "^1.0.5",
     "dotenv": "^16.4.7",
-    "typescript": "^4.9.0 || ^5.0.0",
-    "@cypress/webpack-preprocessor": "^5.17.1"
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.1.6",
+    "eslint-plugin-cypress": "^4.1.0"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,

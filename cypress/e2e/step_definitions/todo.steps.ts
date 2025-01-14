@@ -65,7 +65,7 @@ Then("I should see {string} in the todo list", (text) => {
 Then("the input field should be empty", () => {
   cy.get('input[placeholder="What needs to be done?"]').should(
     "have.value",
-    ""
+    "",
   );
 });
 
